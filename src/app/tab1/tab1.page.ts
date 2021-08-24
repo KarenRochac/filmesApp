@@ -1,3 +1,4 @@
+import { IFilme } from './../models/IFilmes.model';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,6 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+
+  titulo = 'Vídeos App';
+
+  listaVideos: IFilme[] =[
+    {
+
+    }
+  ];
 
   constructor() {}
 

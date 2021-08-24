@@ -1,17 +1,157 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>
-      Tab 1
+      {{titulo}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" color="light">
+  <ion-searchbar placeholder="Buscar"></ion-searchbar>
 
+  <ion-list>
+
+    <ion-item-sliding>
+      <ion-item lines="full">
+        <ion-thumbnail slot="start">
+          <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/bzDAfXoqNAvWUe7uss2NE3BmRqy.jpg ">
+        </ion-thumbnail>
+        <ion-label class="ion-text-wrap">
+          <div>
+            <h1>Soul (2020)</h1>
+            <p>
+              25/12/2020 (ES) - 1h 40m
+            </p>
+            <p>
+              Família, Animação, Música, Comédia, Fantasia
+            </p>
+          </div>
+        </ion-label>
+        <ion-chip color="success" outline>
+          <ion-label>82%</ion-label>
+        </ion-chip>
+      </ion-item>
+
+    <ion-item-options side="end">
+  <ion-item-option >
+    <ion-icon slot="icon-only" name="star"></ion-icon>
+  </ion-item-option>
+  </ion-item-options>
+    </ion-item-sliding>
+
+  <ion-item-sliding>
+          <ion-item lines="full">
+            <ion-thumbnail slot="start">
+              <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jTswp6KyDYKtvC52GbHagrZbGvD.jpg">
+            </ion-thumbnail>
+            <ion-label class="ion-text-wrap">
+              <div>
+                <h1>Luca (2021)</h1>
+                <p>
+                  06/17/2021  (RU) - 1h 41m
+                </p>
+                <p>
+                Animação, Comédia, Família, Fantasia
+                </p>
+              </div>
+            </ion-label>
+            <ion-chip color="success" outline>
+              <ion-label>81%</ion-label>
+            </ion-chip>
+          </ion-item>
+
+        <ion-item-options side="end">
+      <ion-item-option >
+        <ion-icon slot="icon-only" name="star"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+
+  <ion-item-sliding>
+    <ion-item lines="full">
+      <ion-thumbnail slot="start">
+        <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/w5EPR88Kz73eRvnwmgUUKcZQt27.jpg ">
+      </ion-thumbnail>
+      <ion-label class="ion-text-wrap">
+        <div>
+          <h1>O Rei do Show (2017)</h1>
+          <p>
+            25/12/2017 (BR) - 1h 44m
+          </p>
+          <p>
+            Drama
+          </p>
+        </div>
+      </ion-label>
+      <ion-chip color="success" outline>
+        <ion-label>80%</ion-label>
+      </ion-chip>
+    </ion-item>
+
+  <ion-item-options side="end">
+<ion-item-option >
+  <ion-icon slot="icon-only" name="star"></ion-icon>
+</ion-item-option>
+</ion-item-options>
+  </ion-item-sliding>
+
+  <ion-item-sliding>
+    <ion-item lines="full">
+      <ion-thumbnail slot="start">
+        <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/4jNbH7A9HGL4OCNQvzj98ksoa2f.jpg">
+      </ion-thumbnail>
+      <ion-label class="ion-text-wrap">
+        <div>
+          <h1>Moana: Um Mar de Aventuras (2016)</h1>
+          <p>
+            05/01/2017 (BR) - 1h 47m
+          </p>
+          <p>
+            Aventura, Comédia, Família, Animação
+          </p>
+        </div>
+      </ion-label>
+      <ion-chip color="success" outline>
+        <ion-label>76%</ion-label>
+      </ion-chip>
+    </ion-item>
+
+  <ion-item-options side="end">
+<ion-item-option >
+  <ion-icon slot="icon-only" name="star"></ion-icon>
+</ion-item-option>
+</ion-item-options>
+  </ion-item-sliding>
+
+  <ion-item-sliding>
+    <ion-item lines="full">
+      <ion-thumbnail slot="start">
+        <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/5MOyKnmtE2hd778bIybw9v8HkiP.jpg">
+      </ion-thumbnail>
+      <ion-label class="ion-text-wrap">
+        <div>
+          <h1>Procurando Dory (2016)</h1>
+          <p>
+            30/06/2016 (BR) - 1h 37m
+          </p>
+          <p>
+            Aventura, Animação, Comédia, Família
+          </p>
+        </div>
+      </ion-label>
+      <ion-chip color="success" outline>
+        <ion-label>71%</ion-label>
+      </ion-chip>
+    </ion-item>
+
+  <ion-item-options side="end">
+<ion-item-option >
+  <ion-icon slot="icon-only" name="star"></ion-icon>
+</ion-item-option>
+</ion-item-options>
+  </ion-item-sliding>
+
+
+  </ion-list>
 
 </ion-content>
