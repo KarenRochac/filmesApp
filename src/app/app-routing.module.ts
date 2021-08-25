@@ -13,6 +13,18 @@ const routes: Routes = [
   {
     path: 'luca',
     loadChildren: () => import('./filmes/luca/luca.module').then( m => m.LucaPageModule)
+  },
+  {
+    path: 'o-rei-do-show',
+    loadChildren: () => import('./filmes/o-rei-do-show/o-rei-do-show.module').then( m => m.OReiDoShowPageModule)
+  },
+  {
+    path: 'moana',
+    loadChildren: () => import('./filmes/moana/moana.module').then( m => m.MoanaPageModule)
+  },
+  {
+    path: 'produrando-dory',
+    loadChildren: () => import('./filmes/produrando-dory/produrando-dory.module').then( m => m.ProdurandoDoryPageModule)
   }
 ];
 @NgModule({
