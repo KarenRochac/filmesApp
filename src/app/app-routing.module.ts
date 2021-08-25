@@ -25,6 +25,10 @@ const routes: Routes = [
   {
     path: 'produrando-dory',
     loadChildren: () => import('./filmes/produrando-dory/produrando-dory.module').then( m => m.ProdurandoDoryPageModule)
+  },
+  {
+    path: 'dados-filme',
+    loadChildren: () => import('./dados-filme/dados-filme.module').then( m => m.DadosFilmePageModule)
   }
 ];
 @NgModule({
