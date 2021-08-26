@@ -4,31 +4,20 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },
-  {
-    path: 'soul',
-    loadChildren: () => import('./filmes/soul/soul.module').then( m => m.SoulPageModule)
-  },
-  {
-    path: 'luca',
-    loadChildren: () => import('./filmes/luca/luca.module').then( m => m.LucaPageModule)
-  },
-  {
-    path: 'o-rei-do-show',
-    loadChildren: () => import('./filmes/o-rei-do-show/o-rei-do-show.module').then( m => m.OReiDoShowPageModule)
-  },
-  {
-    path: 'moana',
-    loadChildren: () => import('./filmes/moana/moana.module').then( m => m.MoanaPageModule)
-  },
-  {
-    path: 'produrando-dory',
-    loadChildren: () => import('./filmes/produrando-dory/produrando-dory.module').then( m => m.ProdurandoDoryPageModule)
   },
   {
     path: 'dados-filme',
     loadChildren: () => import('./dados-filme/dados-filme.module').then( m => m.DadosFilmePageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   }
 ];
 @NgModule({

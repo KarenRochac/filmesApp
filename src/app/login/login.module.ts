@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SoulPageRoutingModule } from './soul-routing.module';
+import { LoginPageRoutingModule } from './login-routing.module';
 
-import { SoulPage } from './soul.page';
+import { LoginPage } from './login.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SoulPageRoutingModule
+    LoginPageRoutingModule
   ],
-  declarations: [SoulPage]
+  declarations: [LoginPage]
 })
-export class SoulPageModule {}
+export class LoginPageModule {}
