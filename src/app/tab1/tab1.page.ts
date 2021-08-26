@@ -1,8 +1,10 @@
-import { IListaFilmes } from './../models/IFilmeAPI.model';
+import { IGenero } from './../models/IGenero.model';
+import { GeneroService } from './../services/genero.service';
+import { IListaFilmes, IFilmeApi } from './../models/IFilmeAPI.model';
 import { FilmeService } from './../services/filme.service';
 import { DadosService } from './../services/dados.service';
-import { IFilme } from './../models/IFilme.model';
-import { Component } from '@angular/core';
+import { IFilme } from '../models/IFilme.model';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +12,7 @@ import { Router } from '@angular/router';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
 
   titulo = 'Filmes';
 
@@ -64,26 +66,41 @@ export class Tab1Page {
 
   listaFilmes: IListaFilmes;
 
+  generos: string[] = [];
+
   constructor(
-  public dadosService: DadosService,
-  public filmeService: FilmeService,
-  public route: Router)
-  {}
+    public dadosService: DadosService,
+    public filmeService: FilmeService,
+    public generoService: GeneroService,
+    public route: Router
+  ) {}
 
-  buscarFilmes(evento: any){
-    console.log(evento.target.value);
-    const busca = evento.target.value;
-    if(busca && busca.trim() !== ''){
-      this.filmeService.buscarFilmes(busca).subscribe(dados=>{
-        console.log(dados);
-        this.listaFilmes = dados;
-      });
-    }
+
+buscarFilmes(evento: any){
+  console.log(evento.target.value);
+  const busca = evento.target.value;
+  if(busca && busca.trim() !== ''){
+    this.filmeService.buscarFilmes(busca).subscribe(dados=>{
+      console.log(dados);
+      this.listaFilmes = dados;
+    });
   }
+}
 
-  exibirFilme(filme: IFilme){
+  exibirFilme(filme: IFilmeApi){
     this.dadosService.guardarDados('filme', filme);
     this.route.navigateByUrl('/dados-filme');
   }
 
+
+  ngOnInit(){
+    this.generoService.buscarGeneros().subscribe(dados => {
+      console.log('Generos: ', dados.genres);
+      dados.genres.forEach(genero => {
+        this.generos[genero.id] = genero.name;
+      });
+
+      this.dadosService.guardarDados('generos', this.generos);
+    });
+  }
 }
