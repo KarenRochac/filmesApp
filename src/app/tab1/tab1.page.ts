@@ -6,6 +6,7 @@ import { DadosService } from './../services/dados.service';
 import { IFilme } from '../models/IFilme.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -72,7 +73,8 @@ export class Tab1Page implements OnInit {
     public dadosService: DadosService,
     public filmeService: FilmeService,
     public generoService: GeneroService,
-    public route: Router
+    public route: Router,
+    public alertController: AlertController
   ) {}
 
 
@@ -103,4 +105,20 @@ buscarFilmes(evento: any){
       this.dadosService.guardarDados('generos', this.generos);
     });
   }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Alerta!',
+      subHeader: '',
+      message: 'Deseja realmente favoritar o filme?',
+      buttons: ['Sim, favoritar']
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+  }
+
 }
